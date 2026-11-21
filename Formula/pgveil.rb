@@ -1,28 +1,38 @@
 class Pgveil < Formula
-  desc "Zero-trust PostgreSQL wire-protocol dynamic PII masking & AI-agent SQL firewall proxy"
+  desc "Zero-trust PostgreSQL wire-protocol PII masking, Virtual RLS & AI-agent SQL firewall proxy"
   homepage "https://github.com/duhanguler/pgveil"
-  version "0.3.2"
+  version "0.4.0"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/duhanguler/pgveil/releases/download/v0.3.2/pgveil_0.3.2_darwin_arm64.tar.gz"
-      sha256 "c7ca63263f2b9e1430e7b7837e5bf8c24a0bbb5b85e060d09464f6873b9302db"
+      url "https://github.com/duhanguler/pgveil/releases/download/v0.4.0/pgveil_0.4.0_darwin_arm64.tar.gz"
+      sha256 "2ee4f535f303c1269d284290de0ea8f27d2fb976aacdbaa75a0425ad1fdb0262"
     else
-      url "https://github.com/duhanguler/pgveil/releases/download/v0.3.2/pgveil_0.3.2_darwin_amd64.tar.gz"
-      sha256 "f03e2c029de40df7b72a26c67e24a9229a748939b89725335cb83e74cfae3b3d"
+      url "https://github.com/duhanguler/pgveil/releases/download/v0.4.0/pgveil_0.4.0_darwin_amd64.tar.gz"
+      sha256 "79168f8a8534553efc57dd04ef1a428b7641423023fb2b1df2df19e16de021df"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/duhanguler/pgveil/releases/download/v0.3.2/pgveil_0.3.2_linux_amd64.tar.gz"
-      sha256 "af572c3a45f43057eff25e1b112108418e70f0bf0511dfc40e468b893979a4b7"
+      url "https://github.com/duhanguler/pgveil/releases/download/v0.4.0/pgveil_0.4.0_linux_amd64.tar.gz"
+      sha256 "505caf7a43d233482866e85fec73505f3c2f3b945ff78ae7e3cdf7bedb30a257"
     end
   end
 
   def install
     bin.install "pgveil"
+  end
+
+  def caveats
+    <<~EOS
+      Try pgveil live in 3 seconds with zero Docker or external PostgreSQL:
+        pgveil demo
+
+      Or scan your own PostgreSQL database and generate a validated pgveil.yaml:
+        pgveil init --dsn "postgres://user:pass@localhost:5432/mydb"
+    EOS
   end
 
   test do
