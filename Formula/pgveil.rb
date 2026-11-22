@@ -1,23 +1,23 @@
 class Pgveil < Formula
   desc "Zero-trust PostgreSQL wire-protocol PII masking, Virtual RLS & AI-agent SQL firewall proxy"
   homepage "https://github.com/duhanguler/pgveil"
-  version "0.5.0"
+  version "0.5.1"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/duhanguler/pgveil/releases/download/v0.5.0/pgveil_0.5.0_darwin_arm64.tar.gz"
-      sha256 "7933e8fb1943abda3a6ea5362409a8fc8f30e4e89bf2b1727d98839e19373a45"
+      url "https://github.com/duhanguler/pgveil/releases/download/v0.5.1/pgveil_0.5.1_darwin_arm64.tar.gz"
+      sha256 "1abfbbdbf7e66a06bb4a628260027af91c2806a24c2a4d83f78fbadc7bd679e"
     else
-      url "https://github.com/duhanguler/pgveil/releases/download/v0.5.0/pgveil_0.5.0_darwin_amd64.tar.gz"
-      sha256 "c627bca8de051c3ac1ebb8deae0d51dbb179cb1387bc8ae107805e1e589259d3"
+      url "https://github.com/duhanguler/pgveil/releases/download/v0.5.1/pgveil_0.5.1_darwin_amd64.tar.gz"
+      sha256 "eaf437cdc359b170190380400f874b53a8f6f2035142b04c1a327376d1881d01"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/duhanguler/pgveil/releases/download/v0.5.0/pgveil_0.5.0_linux_amd64.tar.gz"
-      sha256 "5f71fcf2390bcc31074f61b22e8e5fb551953e380e28f5d61a8fd686bf7f1f3a"
+      url "https://github.com/duhanguler/pgveil/releases/download/v0.5.1/pgveil_0.5.1_linux_amd64.tar.gz"
+      sha256 "a101674e0c98ab4dbfcc51efc037d95139ce66dc24893be06fe22a7fe3025eab"
     end
   end
 
