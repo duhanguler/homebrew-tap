@@ -7,7 +7,7 @@ class Pgveil < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/duhanguler/pgveil/releases/download/v0.5.1/pgveil_0.5.1_darwin_arm64.tar.gz"
-      sha256 "1abfbbdbf7e66a06bb4a628260027af91c2806a24c2a4d83f78fbadc7bd679e"
+      sha256 "1abfbbdbf7e66a06bb4a628260027af91c2806a24c2a4d83f78fbadc7bd679e5"
     else
       url "https://github.com/duhanguler/pgveil/releases/download/v0.5.1/pgveil_0.5.1_darwin_amd64.tar.gz"
       sha256 "eaf437cdc359b170190380400f874b53a8f6f2035142b04c1a327376d1881d01"
